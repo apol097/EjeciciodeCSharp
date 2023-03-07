@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace HelloWorld
+namespace Ejercicio5
 {
     class Program
     {   
@@ -13,22 +13,22 @@ namespace HelloWorld
             int tamanio;
             Console.Write("Introdusca el tamanio del vector: ");
             tamanio = int.Parse(Console.ReadLine());
-            Console.Write("El tamanio del vector es: " + tamanio);
+            Console.Write("El tamanio del vector es: " + tamanio + "\n\n");
             int[] vector = new int[tamanio];
 
             for(int i  = 0 ; i < tamanio ; i++){
-                Console.WriteLine("\nIntrodusca el valor "+ (i+1) + " del vector: ");
+                Console.Write("Introdusca el valor "+ (i+1) + " del vector: ");
                 vector[i] = int.Parse(Console.ReadLine());
             }
 
-            System.Console.WriteLine("Los valores mayor a 100 del vector son: ");
-
+            
+            int contador = 0;
             foreach( int item in vector){
                 if(item > 100){
-                    int index = Array.IndexOf(vector, item);
-                    Console.Write($" valor {index + 1} : {item} ");
+                    contador++;
                 }
             }
+            System.Console.WriteLine("\nLos valores mayor a 100 del vector son: " + contador);
             Console.ReadKey();
         }
     }
